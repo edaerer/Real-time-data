@@ -7,7 +7,7 @@ from datetime import timedelta
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QMainWindow, QApplication, QLabel
 
-data = pd.read_csv("../datasets_images/iot_telemetry_data.csv")
+data = pd.read_csv("iot_telemetry_data.csv")
 
 class MainWindow(QMainWindow):
     def __init__(self) -> None:
@@ -15,7 +15,7 @@ class MainWindow(QMainWindow):
         # main window
         self.resize(2000, 1000)
         self.setWindowTitle("Ground Station for Team 1000")
-        self.setWindowIcon(QtGui.QIcon("../datasets_images/face.png"))
+        self.setWindowIcon(QtGui.QIcon("face.png"))
 
         self.data_len = len(data)
         self.charts = ["ts", "co", "humidity", "lpg", "smoke", "temp"]
@@ -29,7 +29,7 @@ class MainWindow(QMainWindow):
         self.logo = QLabel(self)
         self.logo.setGeometry(10, 10, 150, 98)
         self.logo.setScaledContents(True)
-        self.logo.setPixmap(QtGui.QPixmap("../datasets_images/face.png"))
+        self.logo.setPixmap(QtGui.QPixmap("face.png"))
 
         # top widget
         self.topWidget = QtWidgets.QWidget()
